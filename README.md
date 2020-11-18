@@ -1,0 +1,2 @@
+# nanograd
+nn from scratch
