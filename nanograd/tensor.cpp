@@ -26,11 +26,8 @@ Tensor Tensor::operator+(Tensor &tensor) {
 
 Tensor Tensor::operator+(int num) {
   Tensor tensor(num);
-  Tensor out(this->getVal() + tensor.getVal(),
-             vector<shared_ptr<Node>>{this->getNode(), tensor.getNode()});
 
-  out.getNode()->backFunc = backwardAdd;
-  return out;
+  return *this + tensor;
 }
 
 Tensor Tensor::operator*(Tensor &tensor) {
@@ -43,11 +40,8 @@ Tensor Tensor::operator*(Tensor &tensor) {
 
 Tensor Tensor::operator*(int num) {
   Tensor tensor(num);
-  Tensor out(this->getVal() * tensor.getVal(),
-             vector<shared_ptr<Node>>{this->getNode(), tensor.getNode()});
 
-  out.getNode()->backFunc = backwardMult;
-  return out;
+  return *this * tensor;
 }
 
 Tensor operator+(int num, Tensor &tensor) { return tensor + num; }

@@ -47,6 +47,13 @@ void runTests() {
   assert(t9.getGrad() == 11);
   assert(t11.getGrad() == 3);
 
+  Tensor t13(4);
+  Tensor t14 = t13 * 5;
+  assert(t14.getVal() == 20);
+  t14.backward();
+
+  assert(t13.getGrad() == 5);
+
   cout << "Tests: Passed\n";
 }
 
