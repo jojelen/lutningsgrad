@@ -5,7 +5,7 @@ cc = meson.get_compiler('cpp')
 cpp_args = ['-std=c++17', '-Wall', '-Wextra']
 
 base_dir = meson.current_source_dir()
-add_global_arguments('-Dbase_dir="@0@"'.format(base_dir),
+add_global_arguments('-DBASE_DIR="@0@"'.format(base_dir),
                      language: 'cpp')
 
 opencl = dependency('OpenCL')
