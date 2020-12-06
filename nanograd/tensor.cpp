@@ -70,6 +70,6 @@ void Tensor::backward() {
   reverse(graph.begin(), graph.end());
 
   node_->grad = 1;
-  for (auto &n : graph)
-    n->backFunc(n);
+  for (auto &node : graph)
+    node->backFunc(node);
 }
