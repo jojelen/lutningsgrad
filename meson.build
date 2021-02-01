@@ -1,4 +1,4 @@
-project('nanograd', 'cpp')
+project('lutningsgrad', 'cpp')
 
 
 cc = meson.get_compiler('cpp')
@@ -10,13 +10,15 @@ add_global_arguments('-DBASE_DIR="@0@"'.format(base_dir),
 
 opencl = dependency('OpenCL')
 
-nanograd_test = ['test/unit_tensor.cpp', 'nanograd/tensor.cpp', 'nanograd/ops.cpp']
+lutningsgrad = ['test/unit_tensor.cpp',
+                'lutningsgrad/tensor.cpp',
+                'lutningsgrad/ops.cpp']
 
-nanograd_inc = include_directories('nanograd')
+lutningsgrad = include_directories('lutningsgrad')
 utils_inc = include_directories('utils')
 
 subdir('utils')
-subdir('nanograd')
+subdir('lutningsgrad')
 subdir('examples')
 subdir('test')
 

@@ -1,8 +1,7 @@
-# nanograd
+# Lutningsgrad
 
-Tiny framework to perform autodifferentiation of computation graphs written in C++.
-
-## Example
+Tiny framework to perform autodifferentiation of computation graphs written in
+C++.
 
 ## Mnist
 
